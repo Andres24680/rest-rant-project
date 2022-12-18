@@ -1,6 +1,6 @@
 
 const React = require('react')
-const Def = require('../default')
+const Def = require('../views/default')
 
 function showPage(){
 

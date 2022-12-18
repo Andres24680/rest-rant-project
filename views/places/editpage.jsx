@@ -1,5 +1,5 @@
 const React = require('express')
-const Def = require('../default')
+const Def = require('../views/default')
 
 function editPage(){
 
