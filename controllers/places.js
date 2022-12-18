@@ -20,8 +20,14 @@ router.get('/', (req, res)=>{
     res.render('places/index', {places})
 })
 
+router.post('/', (req, res) => {
+  console.log('Post')
+
+ 
+})
+
 router.get('/new', (req, res) => {
-    res.render('places/newpage')
+    res.render('places/new')
   })
 
 module.exports = router
