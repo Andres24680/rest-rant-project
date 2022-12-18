@@ -1,26 +1,24 @@
+// Modules and Globals
+require('dotenv').config()
 const express = require('express')
 const app = express()
 
-require(`dotenv`).config()
-
-//JSX 
+// Express Settings
+app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
+app.use(express.static('public'))
 
+// Controllers & Routes
 app.use('/places', require('./controllers/places'))
 
-app.get('/', (req, res)=>{
-    //Will render home.jsx
+app.get('/', (req, res) => {
     res.render('home')
-    
 })
 
-
-//Use this to get any page that doesn't reach any path
-app.get('*',(req,res)=>{
-    //res.status(404).send("<h1>THIS IS A 404</h1>")
-    //This render will grab 404.jsx
-    res.render('404')
+app.get('*', (req, res) => {
+    res.render('error404')
 })
 
+// Listen for Connections
 app.listen(process.env.PORT)
