@@ -12,7 +12,6 @@ function places(placesinfo){
                     </p>
                     <img src = {place.pic} alt = {place.name} className={place.city}></img>
                     <div>
-                        Photo by <a href={place.attribute}>{place.author}</a> on <a href={place.unsplash}>{place.site}</a>
                     </div>
                     <p className='text-center'>
                         Located in {place.city}, {place.state}
