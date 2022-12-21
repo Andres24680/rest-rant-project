@@ -32,9 +32,10 @@ router.post('/', (req, res) => {
   if (!req.body.state) {
     req.body.state = 'USA'
   }
-  places.push(req.body)
+ /* places.push(req.body) */
   res.redirect('/places')
 })
+
 
 
 router.get('/new', (req, res) => {
