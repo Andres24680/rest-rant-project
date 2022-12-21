@@ -1,30 +1,32 @@
 const React =  require('react')
 const Def = require('../default')
 
-function places(placesinfo){
-    let placeFormat =placesinfo.places.map((place)=>{
-        return(
-                <div className='col-sm-6'>
-                    {/* <h1>Places</h1> */}
-                    <h2>{place.name}</h2>
-                    <p className='text-center'>
-                        {place.cuisines}
-                    </p>
-                    <img src = {place.pic} alt = {place.name} className={place.city}></img>
-                    <div>
-                    </div>
-                    <p className='text-center'>
-                        Located in {place.city}, {place.state}
-                    </p>
-                </div>
-        )
-    })
+function places(data){
+  let placesFormatted = data.places.map((place, index) => {
+    return (
+      <div className="col-sm-6">
+        <h2>
+          <a href={`/places/${index}`} >
+            {place.name}
+          </a>
+        </h2>
+        <p className="text-center">
+          {place.cuisines}
+        </p>
+        <img src={place.pic} alt={place.name} />
+        <p className="text-center">
+          Located in {place.city}, {place.state}
+        </p>
+      </div>
+    )
+  })
+  
     return(
         <Def>
             <main>
                 <h1> Places Index Page</h1>
                 <div className='row'>
-                    {placeFormat}
+                    {placesFormatted}
                 </div>
                 <a href="/places/new">
                     <button className="btn-primary">Add a New Place Page</button>
