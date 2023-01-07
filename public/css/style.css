@@ -34,3 +34,7 @@ body {
     background-color: white;
   }
   
+  .img-thumbnail {
+    max-width: 25%;
+    height: 50%;
+}
