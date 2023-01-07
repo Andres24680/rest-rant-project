@@ -6,9 +6,7 @@ function show (data) {
         <Def>
           <main>
             <h1>{ data.place.name }</h1>
-            <a href={`/places/${data.id}/edit`} className="btn btn-warning"> 
-  Edit
-</a>     
+            <a href={`/places/${data.id}/edit`} className="btn btn-warning">Edit</a>     
 
 <form method="POST" action={`/places/${data.id}?_method=DELETE`}> 
   <button type="submit" className="btn btn-danger">
