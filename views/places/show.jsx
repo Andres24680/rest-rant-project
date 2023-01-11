@@ -65,7 +65,7 @@ function show(data){
                  <h2>Comments</h2>
                  {comments}
                  <h2>Leave a rating?</h2>
-                 < form action ={`/places/${data.place._id}/comment`} method="POST">
+                 < form action ={`/places/${data.place.id}/comment`} method="POST">
                  <div className="row d-flex justify-content-center">
                         <div className="form-group col-sm-5">
                             <label htmlFor="author">Author</label>
@@ -77,7 +77,7 @@ function show(data){
                         </div>
                         <div className="form-check col-sm-1">
                             <label htmlFor="rant">Rant?</label>
-                            <input className="form-check-input" type="checkbox" name="rant" id="rant" value="on"/>    
+                            <input className="form-check-input" type="checkbox" name="rant" id="rant" checked/>    
                         </div>                         
                         <div className="form-group col-sm-6">
                             <label htmlFor="stars">Star Rating</label>

@@ -78,10 +78,17 @@ router.put("/:id", (req, res) => {
 
 //comment
 router.post('/:id/comment', (req, res) => {
+  if (req.body.rant) {
+    req.body.rant = true;
+} else {
+    req.body.rant = false;
+}
   console.log(req.body)
+
   db.Place.findById(req.params.id)
   .then(place => {
-      db.Comment.create(req.body)
+
+      db.Comment.save(req.body)
       .then(comment => {
           place.comments.push(comment.id)
           place.save()
@@ -112,12 +119,5 @@ router.delete("/:id", (req, res) => {
 })
 
 
-router.post('/:id/rant', (req, res) => {
-  res.send('GET /places/:id/rant stub')
-})
-
-router.delete('/:id/rant/:rantId', (req, res) => {
-    res.send('GET /places/:id/rant/:rantId stub')
-})
 
 module.exports = router
