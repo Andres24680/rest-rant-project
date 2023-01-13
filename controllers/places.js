@@ -88,7 +88,7 @@ router.post('/:id/comment', (req, res) => {
   db.Place.findById(req.params.id)
   .then(place => {
 
-      db.Comment.save(req.body)
+      db.Comment.create(req.body)
       .then(comment => {
           place.comments.push(comment.id)
           place.save()
